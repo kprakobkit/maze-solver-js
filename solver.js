@@ -5,8 +5,9 @@ var Solver = (function() {
     var explored = [];
 
     View.renderMap(parsedMap);
+
     while (unexplored.length !== 0) {
-      var currentTile = unexplored.pop();
+      var currentTile = unexplored.shift();
       explored.push(currentTile);
 
       if (currentTile.tileValue === "*") { return true; }
@@ -18,7 +19,6 @@ var Solver = (function() {
         });
       }
 
-      currentTile.tileValue = "x";
       View.addToQueue(currentTile);
     }
 

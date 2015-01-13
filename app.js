@@ -1,6 +1,6 @@
 var App = (function() {
   function init() {
-    console.log(Solver.solve(Maps.map1));
+    Solver.solve(Maps.map1);
   }
 
   return {

@@ -23,9 +23,6 @@ var View = (function() {
           case "#":
             tileClass = "wall";
           break;
-          case "x":
-            tileClass = "explored";
-          break;
         }
 
         $tile.addClass(tileClass);
@@ -39,7 +36,7 @@ var View = (function() {
     maze.queue('renderQueue', function() {
       renderTile(element);
       $(this).dequeue('renderQueue');
-    }).delay(100, 'renderQueue');
+    }).delay(10, 'renderQueue');
   }
 
   function renderTile(tile) {
@@ -48,9 +45,6 @@ var View = (function() {
   }
 
   function render() {
-    maze.dequeue('renderQueue');
-    maze.dequeue('renderQueue');
-    maze.dequeue('renderQueue');
     maze.dequeue('renderQueue');
   }
 

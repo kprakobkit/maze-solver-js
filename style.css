@@ -1,0 +1,25 @@
+div.tile {
+  width: 15;
+  height: 15;
+  display: inline-block;
+}
+
+.wall {
+  background-color: grey;
+}
+
+.path {
+  background-color: white;
+}
+
+.explored {
+  background-color: green;
+}
+
+.start {
+  background-color: yellow;
+}
+
+.goal {
+  background-color: red;
+}

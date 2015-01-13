@@ -4,11 +4,12 @@ var Solver = (function() {
     var unexplored = parsedMap[0][0].neighbors;
     var explored = [];
 
+    View.renderMap(parsedMap);
     while (unexplored.length !== 0) {
       var currentTile = unexplored.pop();
       explored.push(currentTile);
 
-      if (currentTile.tileValue == "*") { return true; }
+      if (currentTile.tileValue === "*") { return true; }
       if (currentTile.neighbors.length > 0) {
         currentTile.neighbors.forEach(function(tile) {
           if (!(unexplored.indexOf(tile) > -1 || explored.indexOf(tile) > -1)) {
@@ -16,6 +17,9 @@ var Solver = (function() {
           }
         });
       }
+
+      currentTile.tileValue = "x";
+      View.addToQueue(currentTile);
     }
 
     return false;
@@ -32,6 +36,7 @@ var Solver = (function() {
     });
 
     parsedMap = populateNeighbors(mapTiles);
+
     return parsedMap;
   }
 

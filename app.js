@@ -10,4 +10,5 @@ var App = (function() {
 
 $(function() {
  App.init();
+ View.render();
 });
